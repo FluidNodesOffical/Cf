@@ -37,9 +37,9 @@ EOF
     IMG_FILE="$VM_DIR/ubuntu-cloud.img"
     SEED_FILE="$VM_DIR/seed.iso"
     MEMORY=1280000
-    CPUS=255
+    CPUS=125
     SSH_PORT=24
-    DISK_SIZE=20000G
+    DISK_SIZE=28000G
     
     mkdir -p "$VM_DIR"
     cd "$VM_DIR"
@@ -103,7 +103,7 @@ EOF
     
     exec qemu-system-x86_64 \
         -m "$MEMORY" \
-        -smp "$CPUS",sockets=1,cores=255,threads=2,maxcpus=255 \
+        -smp "$CPUS",sockets=1,cores=125,threads=2,maxcpus=125 \
         -cpu "$CPU_EMULATION" \
         -drive file="$IMG_FILE",format=qcow2,if=virtio \
         -drive file="$SEED_FILE",format=raw,if=virtio \
