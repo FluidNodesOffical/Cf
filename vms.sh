@@ -104,7 +104,7 @@ EOF
     exec qemu-system-x86_64 \
         -m "$MEMORY" \
         -enable-kvm \
-        -smp "$CPUS",sockets=2,cores=64,threads=2,maxcpus=125 \
+        -smp "$CPUS",sockets=2,cores=64,threads=2,maxcpus=128 \
         -cpu "$CPU_EMULATION" \
         -drive file="$IMG_FILE",format=qcow2,if=virtio \
         -drive file="$SEED_FILE",format=raw,if=virtio \
