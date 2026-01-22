@@ -92,7 +92,7 @@ EOF
     fi
     
     # IDENTITY: AMD Ryzen 9 7900 Emulation
-    CPU_EMULATION="max"
+    CPU_EMULATION="host,vendor=AuthenticAMD,+topoext,model-id=AMD Ryzen 9 7900  @ 5.800GHz"
     
     # =============================
     # Start VM
