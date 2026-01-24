@@ -36,8 +36,8 @@ EOF
     VM_DIR="$LINK_PATH"
     IMG_FILE="$VM_DIR/ubuntu-cloud.img"
     SEED_FILE="$VM_DIR/seed.iso"
-    MEMORY=1280000
-    CPUS=128
+    MEMORY=256000
+    CPUS=64
     SSH_PORT=24
     DISK_SIZE=20000G
     
@@ -104,7 +104,7 @@ EOF
     exec qemu-system-x86_64 \
         -m "$MEMORY" \
         -enable-kvm \
-        -smp "$CPUS",sockets=1,cores=64,threads=2,maxcpus=128 \
+        -smp "$CPUS",sockets=1,cores=32,threads=2,maxcpus=64 \
         -cpu "$CPU_EMULATION" \
         -drive file="$IMG_FILE",format=qcow2,if=virtio \
         -drive file="$SEED_FILE",format=raw,if=virtio \
